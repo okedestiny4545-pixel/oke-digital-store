@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>OKE Digital Store</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+
+body{
+background:#f4f7fb;
+}
+
+
+header{
+
+background:#0066cc;
+color:white;
+padding:30px;
+text-align:center;
+
+}
+
+
+
+nav{
+
+background:#003f80;
+padding:15px;
+text-align:center;
+
+}
+
+
+
+nav a{
+
+color:white;
+text-decoration:none;
+margin:15px;
+font-weight:bold;
+
+}
+
+
+
+.hero{
+
+background:linear-gradient(90deg,#0066cc,#00aaff);
+color:white;
+padding:60px;
+text-align:center;
+
+}
+
+
+
+.hero button{
+
+background:#28a745;
+color:white;
+border:none;
+padding:15px 30px;
+border-radius:10px;
+cursor:pointer;
+
+}
+
+
+
+
+.tools{
+
+padding:20px;
+text-align:center;
+
+}
+
+
+
+input{
+
+padding:12px;
+border-radius:8px;
+border:1px solid #aaa;
+
+}
+
+
+
+.products{
+
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:20px;
+padding:30px;
+
+}
+
+
+
+
+.card{
+
+background:white;
+padding:15px;
+border-radius:15px;
+box-shadow:0 0 15px #ccc;
+text-align:center;
+
+}
+
+
+
+.card img{
+
+width:100%;
+height:200px;
+object-fit:cover;
+border-radius:10px;
+
+}
+
+
+
+.price{
+
+font-size:22px;
+font-weight:bold;
+color:#0066cc;
+margin:10px;
+
+}
+
+
+
+
+button{
+
+background:#28a745;
+color:white;
+padding:12px;
+border:0;
+border-radius:8px;
+cursor:pointer;
+
+}
+
+
+
+.contact{
+
+background:white;
+margin:30px;
+padding:30px;
+border-radius:15px;
+text-align:center;
+box-shadow:0 0 15px #ccc;
+
+}
+
+
+
+
+.contact a{
+
+background:#25D366;
+color:white;
+padding:15px 25px;
+border-radius:10px;
+text-decoration:none;
+display:inline-block;
+margin-top:15px;
+
+}
+
+
+
+footer{
+
+background:#222;
+color:white;
+padding:25px;
+text-align:center;
+
+}
+
+
+
+</style>
+
+</head>
+
+
+
+<body>
+
+
+
+<header>
+
+
+<h1>OKE DIGITAL STORE</h1>
+
+<p>Your Trusted Phone & Gadget Store</p>
+
+
+</header>
+
+
+
+
+
+<nav>
+
+
+<a href="#">
+Home
+</a>
+
+
+<a href="#">
+Phones
+</a>
+
+
+<a href="#">
+Laptops
+</a>
+
+
+<a href="#contact">
+Contact Support
+</a>
+
+
+
+</nav>
+
+
+
+
+
+
+<section class="hero">
+
+
+<h1>
+Welcome To OKE Digital Store
+</h1>
+
+
+<p>
+Buy quality gadgets at affordable prices
+</p>
+
+
+<button onclick="scrollProducts()">
+
+Shop Now
+
+</button>
+
+
+</section>
+
+
+
+
+
+
+<div class="tools">
+
+
+<input id="search"
+placeholder="Search products..."
+onkeyup="searchProduct()">
+
+
+
+<h2>
+Cart:
+<span id="cart">
+0
+</span>
+
+</h2>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="products" id="products">
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1592899677977-9c10ca588bbd">
+
+
+<h2>
+iPhone 15
+</h2>
+
+
+<p class="price">
+₦1,450,000
+</p>
+
+
+<button onclick="buy('iPhone 15')">
+
+Buy Now
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1610945265064-0e34e5519bbf">
+
+
+<h2>
+Samsung Galaxy
+</h2>
+
+
+<p class="price">
+₦1,250,000
+</p>
+
+
+<button onclick="buy('Samsung Galaxy')">
+
+Buy Now
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8">
+
+
+<h2>
+HP Laptop
+</h2>
+
+
+<p class="price">
+₦780,000
+</p>
+
+
+<button onclick="buy('HP Laptop')">
+
+Buy Now
+
+</button>
+
+
+</div>
+
+
+
+
+
+
+<div class="card">
+
+
+<img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e">
+
+
+<h2>
+AirPods
+</h2>
+
+
+<p class="price">
+₦180,000
+</p>
+
+
+<button onclick="buy('AirPods')">
+
+Buy Now
+
+</button>
+
+
+</div>
+
+
+
+</div>
+
+
+
+
+
+
+
+<section class="contact" id="contact">
+
+
+<h2>
+Contact Support
+</h2>
+
+
+<p>
+Need help? Talk directly with the owner.
+</p>
+
+
+
+<a href="https://wa.me/2348101542144" target="_blank">
+
+💬 Chat On WhatsApp
+
+</a>
+
+
+
+</section>
+
+
+
+
+
+
+
+<footer>
+
+
+<h2>
+OKE DIGITAL STORE
+</h2>
+
+
+<p>
+WhatsApp: +2348101542144
+</p>
+
+
+<p>
+support@okedigitalstore.com
+</p>
+
+
+<p>
+© 2026 All Rights Reserved
+</p>
+
+
+
+</footer>
+
+
+
+
+
+
+
+
+
+<script>
+
+
+
+let cart=0;
+
+
+
+function buy(product){
+
+
+cart++;
+
+
+document.getElementById("cart").innerHTML=cart;
+
+
+alert(
+product+" added to cart"
+);
+
+
+}
+
+
+
+
+function searchProduct(){
+
+
+let value =
+document.getElementById("search").value.toLowerCase();
+
+
+
+let cards =
+document.querySelectorAll(".card");
+
+
+
+cards.forEach(card=>{
+
+
+if(card.innerText.toLowerCase().includes(value)){
+
+
+card.style.display="block";
+
+
+}else{
+
+
+card.style.display="none";
+
+
+}
+
+
+
+});
+
+
+}
+
+
+
+
+function scrollProducts(){
+
+
+document.getElementById("products")
+.scrollIntoView();
+
+
+}
+
+
+
+</script>
+
+
+
+
+</body>
+</html>
